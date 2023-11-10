@@ -26,14 +26,11 @@ namespace Exam
                 try
                 {
                     string Topic = Target.GetAttributeValue<string>("subject");
-                    Entity newTask = new Entity("task");
+                   //Entity newTask = new Entity("task");
 
-                    newTask["regardingobjectid"] = new EntityReference("lead", Target.Id);
-                    newTask["subject"] = "Follow Up";
+                    //newTask["regardingobjectid"] = new EntityReference("lead", Target.Id);
+                    //newTask["subject"] = "Follow Up";
                     Target["subject"] = Topic +" "+ DateTime.UtcNow.ToString("dd/MM/yyyy");//Format to Input only the Date.
-                    service.Update(Target);
-                  //  service.Create(newTask);
-
                 }
 
                 catch (FaultException<OrganizationServiceFault> ex)
