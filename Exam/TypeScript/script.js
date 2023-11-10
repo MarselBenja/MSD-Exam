@@ -184,7 +184,7 @@ var Exam;
                 if (Team) {
                     if (Team[0].entityType == "cr260_skill") {
                         const confirmStrings = {
-                            text: "You can not select a skill for this field. Please select a record from Teams Entity!",
+                            text: "You can not select a skill for this field. Please select a record from the Sales Team!",
                             title: `Warning!`,
                         };
                         const confirmOptions = {
