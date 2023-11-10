@@ -29,7 +29,6 @@ namespace Exam
                     EntityReference AccountER = Target.GetAttributeValue<EntityReference>("cr260_account");
                     Entity Account = service.Retrieve(AccountER.LogicalName, AccountER.Id, new ColumnSet("primarycontactid"));
                     EntityReference Contact = Account.GetAttributeValue<EntityReference>("primarycontactid");
-
                     int AgreementType = Target.GetAttributeValue<OptionSetValue>("cr260_agreementtype").Value;
 
                     switch (AgreementType)
@@ -81,7 +80,6 @@ namespace Exam
                             }
                             break;
                         case (int)agreementType.NDA:
-
                             //Check if any NDAs Agreements exists with selected Account.
                             var fetchNDA = $@"<fetch version='1.0' mapping='logical' no-lock='false' distinct='true'>
                                  <entity name='cr260_agreement'>

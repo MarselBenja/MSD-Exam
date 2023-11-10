@@ -180,7 +180,7 @@ var Exam;
         TS.OnLoad = OnLoad;
         function TeamOnChange() {
             return __awaiter(this, void 0, void 0, function* () {
-                let Team = Form.getControl("cr260_teamid").getAttribute().getValue();
+                let Team = Form.getControl("new_salesteamid").getAttribute().getValue();
                 if (Team) {
                     if (Team[0].entityType == "cr260_skill") {
                         const confirmStrings = {

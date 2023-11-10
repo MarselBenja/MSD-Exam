@@ -89,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OpportunityPlugin.cs" />
     <Compile Include="LeadPlugin.cs" />
     <Compile Include="AgreementPlugin.cs" />
     <Compile Include="Enums.cs" />

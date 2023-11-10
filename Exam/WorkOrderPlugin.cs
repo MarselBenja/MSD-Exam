@@ -26,8 +26,7 @@ namespace Exam
 
                 try
                 {
-                    
-                    ColumnSet allColumns = new ColumnSet(true);//Objekt per te marre te gjitha fushat e Entitetit.
+                    ColumnSet allColumns = new ColumnSet(true);
                     EntityReference AgentER = Target.GetAttributeValue<EntityReference>("new_assignedagent");
                     Entity AgentEnt = service.Retrieve(AgentER.LogicalName, AgentER.Id, allColumns);
 
@@ -37,7 +36,6 @@ namespace Exam
                     bool WorksOnWednesday = AgentEnt.GetAttributeValue<bool>("new_isscheduledwednesday");
                     bool WorksOnThursday = AgentEnt.GetAttributeValue<bool>("new_isscheduledthursday");
                     bool WorksOnFriday = AgentEnt.GetAttributeValue<bool>("new_isscheduledfriday");
-
                     int scheduleDay = Target.GetAttributeValue<OptionSetValue>("new_scheduledon").Value;
 
                     bool scheduledOnMatches = true;
@@ -60,7 +58,6 @@ namespace Exam
                             scheduledOnMatches = WorksOnFriday;
                             break;
                     }
-
                     if (scheduledOnMatches != true)
                     {
                         throw new InvalidPluginExecutionException("Agent " + AgentName + " isn't available on that day");
